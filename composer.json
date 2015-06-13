@@ -1,0 +1,20 @@
+{
+    "name": "tricd/easy-phpexcel",
+    "description": "It's a simple wrapper to support easy Excel document creation with PHPExcel",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tobias Redmann",
+            "email": "tobias.redmann@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require" : {
+      "phpoffice/phpexcel": "dev-master"
+    },
+    "autoload": {
+      "psr-0": {
+        "EasyPHPExcel": "Classes/"
+      }
+    }
+}
