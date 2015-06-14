@@ -3,8 +3,9 @@ require_once('../vendor/autoload.php');
 
 
 $data = array(
-	'Name'  => 'Redmann',
-	'Sex'   => 'male'
+	'Name'  => 'Tobias Redmann',
+	'Sex'   => 'male',
+	'Job'   => 'Freelance Software Developer and Consultant'
 );
 
 $excel = new EasyPHPExcel('My first Excel');

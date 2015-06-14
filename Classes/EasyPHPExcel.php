@@ -124,6 +124,8 @@ class EasyPHPExcel{
 
 				$this->objPHPExcel->getActiveSheet()->SetCellValue($currentCell , $currentData);
 
+				$this->objPHPExcel->getActiveSheet()->getStyle($currentCell)->getFont()->setBold(true);
+
 			}
 
 			$this->currentRow++;
@@ -154,6 +156,8 @@ class EasyPHPExcel{
 
 		}
 
+		$this->applyAutoSizing();
+
 		return $this;
 
 	}
@@ -173,6 +177,22 @@ class EasyPHPExcel{
 		$objWriter = new PHPExcel_Writer_Excel2007($this->objPHPExcel);
 		$objWriter->save($file);
 
+
+	}
+
+	/**
+	 * Apply auto sizing 
+	 */
+	private function applyAutoSizing()
+	{
+
+		foreach (range('A', $this->objPHPExcel->getActiveSheet()->getHighestDataColumn()) as $col) {
+
+			$this->objPHPExcel->getActiveSheet()
+			               ->getColumnDimension($col)
+			               ->setAutoSize(true);
+
+		}
 
 	}
 
