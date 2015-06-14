@@ -67,6 +67,24 @@ class EasyPHPExcel{
 
 	}
 
+
+	/**
+	 * @param $rows
+	 *
+	 * @return $this
+	 */
+	public function addRows($rows)
+	{
+		foreach($rows as $row) {
+
+			$this->addRow($row);
+
+		}
+
+		return $this;
+
+	}
+
 	/**
 	 * @param array $row
 	 *
@@ -132,6 +150,7 @@ class EasyPHPExcel{
 
 		}
 
+
 		if (count($this->rows) > 0) {
 
 			foreach($this->rows as $row) {
@@ -181,7 +200,7 @@ class EasyPHPExcel{
 	}
 
 	/**
-	 * Apply auto sizing 
+	 * Apply auto sizing
 	 */
 	private function applyAutoSizing()
 	{
